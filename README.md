@@ -1,107 +1,83 @@
-# 任务管理助手 (Task Manager App)
+# 任务管理助手
 
-一个功能完整的移动任务管理应用，帮助用户高效组织和跟踪日常任务。应用采用本地存储方案，确保快速响应和离线可用性。
+> 一个简洁高效的移动任务管理应用，帮你把生活中的事情都记下来，再也不用担心忘记重要的事了。
 
-## 功能特性
+## 为什么要用这个应用？
 
-### 核心功能
+你是不是经常这样：
+- 📝 脑子里装着一堆事情，总是怕忘记
+- 🎯 想要把任务分个优先级，但不知道怎么管理
+- 📅 有些事情有截止日期，需要提醒
+- 🏷️ 工作、生活、购物的事情混在一起，很乱
 
-- **任务管理**：创建、编辑、删除和查看任务
-- **优先级管理**：为任务设置高、中、低三个优先级
-- **截止日期**：为任务设置截止日期并进行日期选择
-- **任务分类**：将任务分类管理，支持自定义分类
-- **完成状态**：标记任务为已完成或待完成
-- **分类筛选**：按分类快速筛选和查看任务
-- **统计信息**：实时显示总任务数、已完成数和待完成数
+这个应用就是为了解决这些问题而生的。它简单、快速、离线可用，所有数据都存在你的手机里，不用担心隐私问题。
 
-### 用户界面
+## 主要功能
 
-- **首页**：任务列表、统计卡片、分类过滤和浮动操作按钮
-- **任务详情**：查看任务完整信息，支持快速完成状态切换
-- **创建任务**：便捷的表单界面，支持所有任务属性设置
-- **编辑任务**：修改现有任务的所有信息
-- **响应式设计**：完全适配移动设备，支持浅色和深色主题
+### ✨ 任务管理
+- 快速创建任务，只需输入标题就能保存
+- 随时编辑任务的任何信息
+- 一键删除不需要的任务
+- 标记任务为已完成，看着任务一个个完成的感觉真爽
 
-## 技术栈
+### 🎯 优先级系统
+- **高优先级** 🔴 - 紧急的事情，必须先做
+- **中优先级** 🟡 - 重要但不紧急的事
+- **低优先级** 🟢 - 可以慢慢来的事
 
-| 技术 | 版本 | 用途 |
-|------|------|------|
-| **React Native** | 0.81.5 | 跨平台移动应用开发 |
-| **Expo** | 54.0 | 开发框架和工具链 |
-| **TypeScript** | 5.9 | 类型安全的开发语言 |
-| **NativeWind** | 4.2 | Tailwind CSS for React Native |
-| **Expo Router** | 6.0 | 应用路由管理 |
-| **AsyncStorage** | 1.23 | 本地数据持久化存储 |
-| **React Query** | 5.90 | 数据查询和缓存 |
+### 📅 截止日期
+- 为任务设置截止日期，不怕错过期限
+- 日期选择器让选择日期变得简单
+- 支持"今天"、"明天"等快捷显示
 
-## 项目结构
+### 🏷️ 分类管理
+应用预置了三个分类：
+- **工作** 💼 - 工作相关的任务
+- **个人** 👤 - 个人事务
+- **购物** 🛒 - 购物清单
 
-```
-task-manager-app/
-├── app/                          # 应用主要代码
-│   ├── (tabs)/
-│   │   ├── _layout.tsx          # 标签栏布局
-│   │   └── index.tsx            # 首页屏幕
-│   ├── create-task.tsx          # 创建任务屏幕
-│   ├── edit-task.tsx            # 编辑任务屏幕
-│   ├── task-detail.tsx          # 任务详情屏幕
-│   └── _layout.tsx              # 根布局
-├── components/                   # 可复用 UI 组件
-│   ├── task-card.tsx            # 任务卡片组件
-│   ├── stats-card.tsx           # 统计卡片组件
-│   ├── fab.tsx                  # 浮动操作按钮
-│   ├── screen-container.tsx     # 屏幕容器组件
-│   └── ui/
-│       └── icon-symbol.tsx      # 图标映射组件
-├── hooks/                        # 自定义 React Hooks
-│   ├── use-task-store.ts        # 任务数据管理 Hook
-│   ├── use-colors.ts            # 主题颜色 Hook
-│   └── use-color-scheme.ts      # 颜色方案检测 Hook
-├── lib/                          # 工具和配置
-│   ├── utils.ts                 # 工具函数
-│   └── trpc.ts                  # API 客户端
-├── constants/                    # 常量定义
-│   └── theme.ts                 # 主题配置
-├── assets/                       # 应用资源
-│   └── images/                  # 应用图标和图片
-├── design.md                     # 应用设计文档
-├── todo.md                       # 开发待办清单
-├── app.config.ts                # Expo 应用配置
-├── tailwind.config.js           # Tailwind CSS 配置
-├── theme.config.js              # 主题色彩配置
-└── package.json                 # 项目依赖配置
-```
+你也可以根据需要自己添加分类。
 
-## 快速开始
+### 📊 实时统计
+首页顶部一眼就能看到：
+- 总共有多少个任务
+- 已经完成了多少个
+- 还剩多少个待完成
 
-### 前置要求
+### 🌓 深色/浅色主题
+应用会自动跟随你的系统设置，白天用浅色舒服，晚上用深色保护眼睛。
 
-- Node.js 18+ 和 npm/pnpm
-- Expo CLI（可选，使用 `npx expo` 运行）
-- iOS 或 Android 设备/模拟器
+## 快速上手
 
-### 安装依赖
+### 安装
+
+首先，你需要有 Node.js 和 npm/pnpm。如果还没装，去 [nodejs.org](https://nodejs.org) 装一下。
 
 ```bash
-# 使用 pnpm（推荐）
-pnpm install
+# 克隆这个项目
+git clone https://github.com/ZerCatMr/task-manager-app.git
+cd task-manager-app
 
-# 或使用 npm
+# 安装依赖
+pnpm install
+# 或者用 npm
 npm install
 ```
 
-### 开发模式
+### 运行应用
 
 ```bash
 # 启动开发服务器
 pnpm dev
 
-# 或分别启动服务器和 Metro 打包器
-pnpm dev:server      # 后端服务器
-pnpm dev:metro       # Metro 打包器
+# 或者分别启动
+pnpm dev:server      # 后端服务
+pnpm dev:metro       # 前端打包
 ```
 
-### 在设备上运行
+然后用 Expo Go 应用扫描二维码，就能在你的手机上看到应用了。
+
+### 在真实设备上测试
 
 ```bash
 # iOS
@@ -110,236 +86,177 @@ pnpm ios
 # Android
 pnpm android
 
-# Web
-pnpm dev:metro       # 访问 http://localhost:8081
+# Web 浏览器
+pnpm dev:metro
+# 访问 http://localhost:8081
 ```
 
-### 生成 QR 码
+## 怎么用？
 
-```bash
-pnpm qr
-```
+### 创建一个新任务
 
-使用 Expo Go 应用扫描 QR 码在真实设备上预览应用。
+1. 点击右下角的 **+** 按钮
+2. 输入任务标题（这是必须的）
+3. 可以加上描述，说明这个任务是干什么的
+4. 选择优先级 - 这个事情有多急？
+5. 设置截止日期 - 什么时候要完成？
+6. 选择分类 - 这是工作还是生活中的事？
+7. 点击 **保存任务** 就完成了
 
-## 数据模型
+### 完成一个任务
 
-### Task（任务）
+有两种方式：
+- **快速完成**：在任务卡片上点击左边的圆圈，任务就标记为完成了
+- **详细查看**：点击任务卡片进去，看完整信息，然后点击顶部的完成区域
 
-```typescript
-interface Task {
-  id: string;                           // 唯一标识符
-  title: string;                        // 任务标题
-  description: string;                  // 任务描述
-  priority: 'high' | 'medium' | 'low';  // 优先级
-  completed: boolean;                   // 完成状态
-  dueDate: string | null;               // 截止日期（ISO 8601 格式）
-  category: string;                     // 分类 ID
-  createdAt: string;                    // 创建时间
-  updatedAt: string;                    // 更新时间
-}
-```
-
-### Category（分类）
-
-```typescript
-interface Category {
-  id: string;          // 唯一标识符
-  name: string;        // 分类名称
-  color: string;       // 分类颜色（十六进制）
-}
-```
-
-## 颜色方案
-
-### 品牌色
-
-| 颜色 | 浅色模式 | 深色模式 | 用途 |
-|------|---------|---------|------|
-| Primary | #0a7ea4 | #0a7ea4 | 主要操作按钮、链接 |
-| Background | #ffffff | #151718 | 页面背景 |
-| Surface | #f5f5f5 | #1e2022 | 卡片、容器背景 |
-| Foreground | #11181C | #ECEDEE | 主要文本 |
-| Muted | #687076 | #9BA1A6 | 辅助文本 |
-| Border | #E5E7EB | #334155 | 边框、分割线 |
-
-### 状态色
-
-| 状态 | 颜色 | 用途 |
-|------|------|------|
-| Success | #22C55E | 成功、低优先级 |
-| Warning | #F59E0B | 警告、中优先级 |
-| Error | #EF4444 | 错误、高优先级 |
-
-## 使用指南
-
-### 创建任务
-
-1. 点击首页右下角的 **+** 按钮
-2. 填写任务标题（必填）
-3. 添加任务描述（可选）
-4. 选择优先级（高、中、低）
-5. 设置截止日期（可选）
-6. 选择任务分类
-7. 点击 **保存任务** 按钮
+完成的任务会变成灰色，并且有个对勾，看起来很有成就感。
 
 ### 编辑任务
 
-1. 在首页点击任务卡片进入详情页
+想改改之前的任务？很简单：
+1. 点击任务卡片进入详情页
 2. 点击 **编辑** 按钮
-3. 修改任务信息
-4. 点击 **保存修改** 按钮
-
-### 完成任务
-
-**方法一**：在任务卡片上点击复选框
-**方法二**：进入任务详情页，点击完成状态切换区域
+3. 改你想改的东西
+4. 点击 **保存修改**
 
 ### 删除任务
 
 1. 进入任务详情页
-2. 点击 **删除** 按钮
-3. 在确认对话框中选择 **删除**
+2. 点击红色的 **删除** 按钮
+3. 确认一下（防止误删）
+4. 任务就没了
 
-### 筛选任务
+### 按分类查看任务
 
-在首页分类栏中点击分类标签，列表会自动更新显示该分类的任务。点击 **全部** 恢复显示所有任务。
+首页有个分类栏，你可以：
+- 点击 **全部** 看所有任务
+- 点击某个分类只看那个分类的任务
+- 这样就不会被一堆任务淹没了
 
-## 状态管理
+## 技术细节
 
-应用使用 **React Context + AsyncStorage** 进行状态管理和数据持久化。所有任务数据都存储在设备本地，无需网络连接。
+### 用了什么技术？
 
-### useTaskStore Hook
+| 技术 | 为什么用 |
+|------|---------|
+| React Native | 一套代码，iOS 和 Android 都能用 |
+| Expo | 开发快，不用配置 Xcode 和 Android Studio |
+| TypeScript | 代码更安全，不容易出 bug |
+| Tailwind CSS | 样式写得快，看起来也好看 |
+| AsyncStorage | 数据存在手机里，离线也能用 |
 
-```typescript
-const {
-  tasks,              // 所有任务数组
-  categories,         // 所有分类数组
-  isLoading,          // 加载状态
-  addTask,            // 添加任务函数
-  updateTask,         // 更新任务函数
-  deleteTask,         // 删除任务函数
-  toggleTask,         // 切换完成状态函数
-  addCategory,        // 添加分类函数
-  deleteCategory,     // 删除分类函数
-  getStats,           // 获取统计信息函数
-  getTasksByCategory, // 按分类获取任务函数
-} = useTaskStore();
+### 项目结构
+
+```
+task-manager-app/
+├── app/                    # 应用的各个屏幕
+│   ├── (tabs)/
+│   │   ├── index.tsx      # 首页 - 任务列表
+│   │   └── _layout.tsx    # 标签栏配置
+│   ├── create-task.tsx    # 创建任务屏幕
+│   ├── edit-task.tsx      # 编辑任务屏幕
+│   └── task-detail.tsx    # 任务详情屏幕
+├── components/            # 可复用的组件
+│   ├── task-card.tsx      # 任务卡片
+│   ├── stats-card.tsx     # 统计卡片
+│   └── fab.tsx            # 右下角的 + 按钮
+├── hooks/                 # 自定义 Hook
+│   └── use-task-store.ts  # 任务数据管理
+├── assets/                # 图标和图片
+└── design.md              # 设计文档
 ```
 
-## 开发指南
+### 数据怎么存的？
 
-### 添加新屏幕
+所有数据都存在你的手机里，用的是 AsyncStorage。这意味着：
+- ✅ 不用网络也能用
+- ✅ 数据不会上传到云端
+- ✅ 你的隐私完全受保护
+- ⚠️ 如果卸载应用，数据会丢失（所以要定期备份）
 
-1. 在 `app/` 目录下创建新的 `.tsx` 文件
-2. 使用 `ScreenContainer` 组件包装内容
-3. 在 `app/(tabs)/_layout.tsx` 中添加导航配置
-
-### 创建新组件
-
-1. 在 `components/` 目录下创建新的 `.tsx` 文件
-2. 使用 Tailwind CSS 类进行样式设计
-3. 导出组件供其他文件使用
-
-### 使用主题颜色
+### 任务数据结构
 
 ```typescript
-import { useColors } from '@/hooks/use-colors';
-
-export function MyComponent() {
-  const colors = useColors();
-  
-  return (
-    <View style={{ backgroundColor: colors.background }}>
-      <Text style={{ color: colors.foreground }}>Hello</Text>
-    </View>
-  );
+{
+  id: "1234567890",           // 唯一ID
+  title: "完成项目报告",       // 任务标题
+  description: "需要整理...",  // 任务描述
+  priority: "high",            // 优先级：high/medium/low
+  completed: false,            // 是否完成
+  dueDate: "2026-02-15",       // 截止日期
+  category: "工作",            // 分类
+  createdAt: "2026-02-06...",  // 创建时间
+  updatedAt: "2026-02-06..."   // 更新时间
 }
 ```
 
-## 性能优化
+## 颜色设计
 
-- 使用 `FlatList` 而不是 `ScrollView` 处理长列表
-- 避免在渲染时创建新对象和函数
-- 使用 `useMemo` 和 `useCallback` 优化性能
-- 定期检查 TypeScript 编译错误
+应用用的颜色都是精心选择的：
 
-## 测试
+**浅色模式** ☀️
+- 背景：纯白色，看起来很清爽
+- 文字：深灰色，舒服好读
+- 强调色：蓝色，专业感十足
 
-```bash
-# 运行单元测试
-pnpm test
+**深色模式** 🌙
+- 背景：深灰色，保护眼睛
+- 文字：浅灰色，清晰易读
+- 强调色：还是蓝色，保持一致
 
-# 类型检查
-pnpm check
-
-# 代码格式化
-pnpm format
-
-# 代码检查
-pnpm lint
-```
-
-## 部署
-
-### 构建生产版本
-
-```bash
-# 构建 iOS 和 Android 应用
-eas build
-
-# 构建 Web 版本
-pnpm run build
-```
-
-### 发布应用
-
-使用 Expo Application Services (EAS) 发布应用到 App Store 和 Google Play。
+**优先级颜色**
+- 🔴 高优先级：红色，很显眼
+- 🟡 中优先级：黄色，需要注意
+- 🟢 低优先级：绿色，可以慢慢来
 
 ## 常见问题
 
-### 数据丢失怎么办？
+### Q: 我的数据安全吗？
+A: 很安全。所有数据都存在你的手机里，不会上传到任何服务器。
 
-所有数据存储在设备本地的 AsyncStorage 中。如果需要备份，可以导出任务数据。
+### Q: 如果我卸载了应用，数据会怎样？
+A: 数据会被删除。所以如果你想保留数据，可以定期导出。
 
-### 如何同步多个设备上的数据？
+### Q: 能在多个设备上同步吗？
+A: 目前不能。这是一个本地应用，如果需要云同步，我们可以后续加上。
 
-当前版本使用本地存储，不支持跨设备同步。可以通过集成后端服务器来实现此功能。
+### Q: 为什么没有推送通知？
+A: 因为应用是本地的，没有后端服务。如果你需要提醒，可以用手机的日历或闹钟。
 
-### 如何修改应用名称？
+### Q: 能自定义分类吗？
+A: 可以的，应用预置了工作、个人、购物三个分类，你也可以根据需要添加更多。
 
-编辑 `app.config.ts` 文件中的 `appName` 字段。
+### Q: 应用占用多少空间？
+A: 很小，只有几十 MB。数据也只占用几 KB，除非你创建了成千上万个任务。
 
-### 如何修改应用图标？
+## 后续计划
 
-替换 `assets/images/icon.png` 文件，或在 `app.config.ts` 中更新 `logoUrl`。
-
-## 后续功能计划
-
+我们有很多想法要加进来：
 - [ ] 推送通知提醒
-- [ ] 云数据同步
-- [ ] 重复任务支持
-- [ ] 任务搜索功能
-- [ ] 任务导出功能
-- [ ] 用户认证和多设备同步
-- [ ] 任务评论和协作功能
+- [ ] 云端同步（多设备）
+- [ ] 重复任务（每天、每周、每月）
+- [ ] 搜索功能
+- [ ] 导出为 PDF 或 CSV
 - [ ] 任务标签系统
+- [ ] 完成度统计图表
+- [ ] 黑名单功能（屏蔽某些任务）
 
-## 贡献指南
+## 贡献
 
-欢迎提交 Issue 和 Pull Request！
+如果你有想法或者发现了 bug，欢迎提 Issue 或 PR！
+
+## 开发者
+
+这个应用是由 Manus AI Agent 开发的。
 
 ## 许可证
 
-MIT License - 详见 LICENSE 文件
-
-## 联系方式
-
-- GitHub: https://github.com/ZerCatMr/task-manager-app
-- 问题报告: https://github.com/ZerCatMr/task-manager-app/issues
+MIT - 你可以自由使用、修改和分发。
 
 ---
 
-**开发者**: Manus AI Agent  
-**创建时间**: 2026 年 2 月  
 **最后更新**: 2026 年 2 月 6 日
+
+有问题？提 Issue 吧：[GitHub Issues](https://github.com/ZerCatMr/task-manager-app/issues)
+
+Happy Task Managing! 🎉
