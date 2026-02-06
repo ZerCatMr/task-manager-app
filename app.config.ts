@@ -32,7 +32,7 @@ const env = {
   appSlug: "task-manager-app",
   // S3 URL of the app logo - set this to the URL returned by generate_image when creating custom logo
   // Leave empty to use the default icon from assets/images/icon.png
-  logoUrl: "",
+  logoUrl: "https://private-us-east-1.manuscdn.com/sessionFile/sHieNjj6gEntKqZEch3zQ9/sandbox/kPbWBWcIsB1qpbHV1dAtsF-img-1_1770421522000_na1fn_aWNvbg.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvc0hpZU5qajZnRW50S3FaRWNoM3pROS9zYW5kYm94L2tQYldCV2NJc0IxcXBiSFYxZEF0c0YtaW1nLTFfMTc3MDQyMTUyMjAwMF9uYTFmbl9hV052YmcucG5nP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=nDI-wgZF-KroNSdMmyRMMMLt5Afk~TgR4i66VmWpeukCWxiPqiJJFZh2xC4-hTlOneng67wgIH1tWcjRaovLfb0fp69fn9mXDM1N0EABwUJsp8raTi-d5k~aJqY0jikU7fgCsQkFQ3fGZFGMKI4CcsFZeqPaC5~LP8CzgNUlu~bz4WfD-rIJMqX1RJHA21K31LQJJxYI0XOcD5i-fU1Q~Fi0Zsh6TON4-w5LErywBfgydaqIdPS8f7ZUAEICH8JZn8PwGmCMaqBzQdT8A~Ns~wBM6OXVpqVdrFXvex32po61ItjZ2jTblzwrynzyyw5V7EIn3hJpyV56Js8jdhfUZQ__",
   scheme: schemeFromBundleId,
   iosBundleId: bundleId,
   androidPackage: bundleId,
